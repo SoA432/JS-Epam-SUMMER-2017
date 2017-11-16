@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>111</title>
+  </head>
+<body>
+
+<!--*. Реализовать функцию для проверки пин-кода (с помощью замыканий)
+Функция инициализируется пин кодом и макс числом  повторов
+При последующих вызовах передается значение пин кода и возвращается true или false
+-->
+
+<script type="text/javascript">
+
+	var pinOrigin = 555;
+	var count = 3;
+	var currentCount = 1;
+	function check(pin)
+	{
+		
+		if (pin != pinOrigin) 
+			{
+				if (currentCount >= count) 
+				{
+					currentCount++;
+					return false;
+				}
+				else 
+				{
+					currentCount++;
+					return false;
+				}
+
+			}
+		else if ((pin == pinOrigin) && (currentCount>3)) return false
+		else
+		{
+			currentCount = 1;
+			return true;
+		}
+	};
+	
+
+	console.log(check(111));	//false
+	console.log(check(555));	//true
+	console.log(check(555));	//true
+	console.log(check(111));	//false
+	console.log(check(111));	//false
+	console.log(check(555));	//true
+	console.log(check(111));	//false
+	console.log(check(555));	//true
+	console.log(check(111));	//false
+	console.log(check(111));	//false
+	console.log(check(555));	//true
+	console.log(check(111));	//false
+	console.log(check(111));	//false
+	console.log(check(111));	//false
+	console.log(check(111));	//false
+	console.log(check(555));	//false
+	
+
+</script>
+</body>
+</html>

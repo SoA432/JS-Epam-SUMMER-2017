@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>111</title>
+  </head>
+<body>
+<!--
+25. С начала суток прошло N секунд, Определить сколько часов, минут и секунд прошло с начала
+дня (не используя класс Date).
+-->
+<script type="text/javascript"> 
+
+var min = 0, hour = 0;
+
+var sec = prompt ("Введите кол-во секунд");
+if (sec >= 360) 
+    {
+hour = parseInt(sec/360);
+sec = sec - hour*360;
+    }
+if (sec >= 60)
+    {
+min = parseInt(sec/60);
+sec = sec-min*60; 
+    }
+console.log(hour + " часов " + min + " минут " + sec + " секунд");
+
+</script>
+</body>
+</html>

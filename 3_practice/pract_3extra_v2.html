@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>pract3extra</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+<body onload="draw();">
+
+<!-- Реализовать приложение,  для рисования графика произвольной функции используя canvas.   Для задания параметров функции использовать  элементы формы:
+- текстовое поле для ввода формулы функции вида y=f(x)
+- 2 текстовых поля для нижнего и верхнего пределов изменения x1 и x2 (c ограничением ввода только для числовых значений и проверкой x1<x2)
+- поля для задания цвета и толщины графика функции (вид по желанию)
+кнопка + для добавления нового графика функции
+ -->
+
+<div class="flex">
+<canvas id="canvas" width="500" height="500"></canvas>
+<div class="input">
+<p>Ньюансы 'Beta' версии :)</p>
+<p>1. Не работает с тригонометрическими функциями (tan,ctg,sin,cos etc.), математическими выражениями типа sqrt(), pow(x,y)</p>
+<p>2. Необходимо вводить '2*х+0' к примеру, вместо '2х', а также 'х/3+0' вместо 'х/3' и т.д.</p>
+<p>Введите предел х1 (Обязательно, по умолчанию -5):</p>
+<input type="text" name="xStart" onchange="xStart = this.value;"/>
+<p>Введите предел х2 (Обязательно, по умолчанию 5):</p>
+<input type="text" name="xEnd" onchange="xEnd = this.value;"/>
+<p>Введите формулу ниже (Формат y=x+2 // y=x/3+0 // y=x*4-2):</p>
+<input type="text" name="func" onchange="myFunc(this.value);"/>
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+// function myFuncXstart(value) 
+// {
+// 	console.log(parseInt(value));
+// }
+
+// function myFuncXend(value) 
+// {
+// 	console.log(parseInt(value));
+// }
+var xStart = -4;
+var xEnd = 5;
+
+function myFunc(value) 
+{
+	var baseFunc = '' + value;
+	console.log(baseFunc);
+	var tmp = baseFunc.slice(2);
+	xpos = tmp.indexOf('x');
+	breakdown(tmp);
+		// function myFuncXstart(value) 
+		// {
+		// 	var xStart = parseInt(value);
+		// 	breakdown(tmp);
+		// }
+
+		// function myFuncXend(value) 
+		// {
+		// 	var xStart = parseInt(value);
+		// 	breakdown(tmp);
+		// }
+	console.log(xStart);
+	console.log(xEnd);
+}
+
+
+
+	function breakdown(str) 
+	{
+		var num = [];
+		console.log(num);
+		var count = 0;
+		num[count] = '';
+		for (i=0; i <= str.length-1; i++) 
+		{
+			if (!isNaN(str[i])) 
+			{
+				num[count]+=str[i];
+				console.log('tut = ' + num[count]);
+			}
+			else if (isNaN(str[i]) && (str[i]!='x'))
+			{
+				count++;
+				num[count]=str[i];
+				count++;
+				num[count] = '';
+			}
+
+			else num[count] = str[i];
+
+		}
+		console.log(num);
+		letsDoIt(num);
+	}
+
+	function letsDoIt(mas) 
+	{
+		result = [];
+		console.log('xStart = ' + xStart);
+		console.log('xEnd = ' + xEnd);
+		for (i=0; i <= mas.length-3; i++) 
+		{
+			 console.log('mas[i] ' + i + ' = ' + mas[i]);
+			 console.log(!isNaN(mas[0]));
+			 console.log((mas[i+1] == '*'));
+			 console.log((mas[i+2] == 'x'));
+
+			if  ((!isNaN(mas[i])) && (mas[i+1] == '*') && (mas[i+2] == 'x'))
+			{
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					result[j] = mas[i] * j;
+					console.log('XXX ' + result[j]);
+				}
+			}	
+			else if ((mas[i] == 'x') && (mas[i+1] == '*') && (!isNaN(mas[i+2])))
+			{
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					result[j] = mas[i+2] * j;
+					console.log('ZZZ ' + result[j]);
+				}
+			}
+
+			if  ((!isNaN(mas[i])) && (mas[i+1] == '/') && (mas[i+2] == 'x'))
+			{
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					result[j] = mas[i] / j;
+					console.log('XXX ' + result[j]);
+				}
+			}
+			else if ((mas[i] == 'x') && (mas[i+1] == '/') && (!isNaN(mas[i+2])))
+			{
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					result[j] = j / mas[i+2];
+					console.log('ZZZ ' + result[j]);
+				}
+			}
+
+
+
+
+
+			console.log('(mas[i] == "x") ' + (mas[i-2] == 'x'));
+			console.log(mas[i-2]);
+			console.log('isNaN ' + (isNaN(mas[i+1])));
+			console.log(mas[i+1]);
+			console.log('!isNaN ' + (!isNaN(mas[i+2])));
+			console.log(mas[i+2]);
+			// if (!isNaN(mas[i]) && isNaN(mas[i+1]) && (mas[i+1] != 'x') && !isNaN(mas[i+2]))
+			if ((mas[i-2] == 'x') && (isNaN(mas[i+1])) && (!isNaN(mas[i+2])))
+			{	
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					switch (mas[i+1])
+					{
+						case '+': 
+						result[j]+= parseInt(mas[i+2]);
+						break;
+						case '-':
+						result[j]-= parseInt(mas[i+2]);
+						break;
+					}
+				}
+			}
+
+			if ((mas[i] == 'x') && (isNaN(mas[i+1])) && (!isNaN(mas[i+2])))
+			{	
+				for (j=xStart-1; j <= xEnd; j++) 
+				{
+					if (isNaN(result[j])) 
+					{
+						result[j]=j;
+					}
+					switch (mas[i+1])
+					{
+						case '+': 
+						result[j]+= parseInt(mas[i+2]);
+						break;
+						case '-':
+						result[j]-= parseInt(mas[i+2]);
+						break;
+					}
+				}
+			}
+
+
+		}
+		console.log('this is result ' + result);
+		drawGraph(result);
+	}
+
+
+function drawGraph (masToDraw) {
+	var canvas = document.getElementById('canvas');
+  	if (canvas.getContext) 
+  	{
+  		var graph = canvas.getContext('2d');
+  		for (k=xStart-1; k <= xEnd-1; k++) 
+		{	
+			graph.beginPath();
+			console.log('masstodraw ' + masToDraw[k]);
+			// graph.moveTo(250+k*40,250+masToDraw[k]*50);
+			// graph.lineTo(250+(k+1)*40,250+masToDraw[k+1]*50);
+			graph.moveTo(250+k*40,250-masToDraw[k]*40);
+	  		graph.lineTo(250+(k+1)*40,250-masToDraw[k+1]*40);
+			graph.stroke();
+		}
+  	}
+}
+
+
+function draw() {	
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+    ctx.strokeRect(0,0,500,500);
+  }
+  ctx.beginPath();
+  ctx.moveTo(250,0);
+  ctx.lineTo(250,500);
+  ctx.moveTo(0,250)
+  ctx.lineTo(500,250);
+  ctx.stroke();
+  for (i=0; i<11; i++) {
+	  ctx.beginPath();
+	  ctx.moveTo(250-20,50+i*40);
+	  ctx.lineTo(250+20,50+i*40);
+	  ctx.stroke();
+  }
+  for (i=0; i<11; i++) {
+	  ctx.beginPath();
+	  ctx.moveTo(50+40*i,250-20);
+	  ctx.lineTo(50+40*i,250+20);
+	  ctx.stroke();
+  }
+}
+</script>
+
+
+</body>
+</html>

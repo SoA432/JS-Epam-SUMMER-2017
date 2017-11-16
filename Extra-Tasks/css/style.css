@@ -1,0 +1,100 @@
+body {
+	background-color:black;
+}
+button {
+	position: relative;
+	left:45%;
+	margin: 20px;
+	border: 1px solid gray;
+	background: radial-gradient(circle at 15px 15px, white 2%, #FFE573 98%);
+	cursor: pointer;
+}
+
+table {
+	border-spacing: 0;
+	margin: 0 auto;
+	border: 1px solid gray;
+}
+
+td {
+	display: border-box;
+	width: 80px;
+	height: 80px;
+	background: radial-gradient(circle at -20px 40px, white 5%, #FFE573 95%);
+	padding: 0;
+	margin: 0;
+	border: 1px solid gray;
+	cursor: pointer;
+}
+
+div {
+	width: 80px;
+	height: 80px;
+	transition: transform 0.5s;
+}
+
+#c0:hover, #c1:hover, #c2:hover, #c3:hover, #c4:hover {
+	cursor: pointer;
+	transform: scale(1.15);
+}
+
+#c0:active, #c1:active, #c2:active, #c3:active, #c4:active {
+	
+}
+
+#c0 {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px auto;
+	background: radial-gradient(circle at 15px 15px, white 5%, purple 95%);
+}
+
+#c1 {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px auto;
+	background: radial-gradient(circle at 15px 15px, white 5%, black 95%);
+}
+
+#c2 {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px auto;
+	background: radial-gradient(circle at 15px 15px, white 5%, red 95%);
+}
+
+#c3 {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px auto;
+	background: radial-gradient(circle at 15px 15px, white 5%, blue 95%);
+}
+
+#c4 {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px auto;
+	background: radial-gradient(circle at 15px 15px, white 5%, green 95%);
+}
+
+#first {
+	width:100px;
+	height: 100px;
+	background-color: black;
+}
+
+.info 
+{
+	position: fixed;
+	right:5%;
+	top: 5%;
+	width: 350px;
+	color:white;
+	border: 1px solid white;
+	text-align: center; 
+}

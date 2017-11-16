@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>main</title>
+  </head>
+<body>
+
+<!-- 25. Заменить ссылку с установленным значением атрибута data-instant на iframe c
+содержимым ресурса по ссылке -->
+
+<a href="http://yapro.ru/web-master/xhtml/iframe-element.html" data-instant="zzz" class="zzzzcc">ссылка</a>
+
+<script type="text/javascript">
+var a = document.getElementsByTagName('a')[0];
+var href = document.getElementsByTagName('a')[0].getAttribute("href");
+var x = document.getElementsByTagName('a')[0].getAttribute("data-instant");
+if (x != null) 
+{
+	var iframe = document.createElement('iframe');
+	document.body.appendChild(iframe);
+	document.getElementsByTagName('iframe')[0].setAttribute('src', href);
+	document.getElementsByTagName('iframe')[0].setAttribute('width', '700');
+	document.getElementsByTagName('iframe')[0].setAttribute('height', '700');
+	document.body.removeChild(a);
+}
+console.log(x);
+
+</script>
+
+
+
+</body>
+</html>

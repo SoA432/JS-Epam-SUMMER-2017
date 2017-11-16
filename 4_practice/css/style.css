@@ -1,0 +1,42 @@
+body {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background-color:black
+}
+
+.flex {
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+}
+
+.input {
+	width: 458px;
+	border: 1px solid black;
+	padding: 20px;
+	background-color:#FAF29A;
+}
+input {
+	width: 400px;
+}
+
+canvas {
+	background-color:white;
+}
+/*
+
+
+y=13x+13
+y=4x+5
+y=1/2x
+
+
+
+*/
+
+/*
+
+y=22*x+5*7+72/6
+
+*/

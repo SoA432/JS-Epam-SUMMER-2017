@@ -1,0 +1,862 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>Lines</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+
+<!-- <div class="c c0"></div>	
+<div class="c c1"></div>	
+<div class="c c2"></div>	
+<div class="c c3"></div>
+<div class="c c4"></div> -->
+
+<button onclick="addRand()">Start Game / Add 3 balls</button>
+
+<table>
+	<tr id="tr-0">
+		<td><div class="r0c0"></div></td>
+		<td><div class="r0c1"></div></td>
+		<td><div class="r0c2"></div></td>
+		<td><div class="r0c3"></div></td>
+		<td><div class="r0c4"></div></td>
+		<td><div class="r0c5"></div></td>
+		<td><div class="r0c6"></div></td>
+		<td><div class="r0c7"></div></td>
+		<td><div class="r0c8"></div></td>
+		<td><div class="r0c9"></div></td>
+	</tr>
+
+	<tr id="tr-1">
+		<td><div class="r1c0"></div></td>
+		<td><div class="r1c1"></div></td>
+		<td><div class="r1c2"></div></td>
+		<td><div class="r1c3"></div></td>
+		<td><div class="r1c4"></div></td>
+		<td><div class="r1c5"></div></td>
+		<td><div class="r1c6"></div></td>
+		<td><div class="r1c7"></div></td>
+		<td><div class="r1c8"></div></td>
+		<td><div class="r1c9"></div></td>
+	</tr>
+
+	<tr id="tr-2">
+		<td><div class="r2c0"></div></td>
+		<td><div class="r2c1"></div></td>
+		<td><div class="r2c2"></div></td>
+		<td><div class="r2c3"></div></td>
+		<td><div class="r2c4"></div></td>
+		<td><div class="r2c5"></div></td>
+		<td><div class="r2c6"></div></td>
+		<td><div class="r2c7"></div></td>
+		<td><div class="r2c8"></div></td>
+		<td><div class="r2c9"></div></td>
+	</tr>
+
+	<tr id="tr-3">
+		<td><div class="r3c0"></div></td>
+		<td><div class="r3c1"></div></td>
+		<td><div class="r3c2"></div></td>
+		<td><div class="r3c3"></div></td>
+		<td><div class="r3c4"></div></td>
+		<td><div class="r3c5"></div></td>
+		<td><div class="r3c6"></div></td>
+		<td><div class="r3c7"></div></td>
+		<td><div class="r3c8"></div></td>
+		<td><div class="r3c9"></div></td>
+	</tr>
+
+	<tr id="tr-4">
+		<td><div class="r4c0"></div></td>
+		<td><div class="r4c1"></div></td>
+		<td><div class="r4c2"></div></td>
+		<td><div class="r4c3"></div></td>
+		<td><div class="r4c4"></div></td>
+		<td><div class="r4c5"></div></td>
+		<td><div class="r4c6"></div></td>
+		<td><div class="r4c7"></div></td>
+		<td><div class="r4c8"></div></td>
+		<td><div class="r4c9"></div></td>
+	</tr>
+
+	<tr id="tr-5">
+		<td><div class="r5c0"></div></td>
+		<td><div class="r5c1"></div></td>
+		<td><div class="r5c2"></div></td>
+		<td><div class="r5c3"></div></td>
+		<td><div class="r5c4"></div></td>
+		<td><div class="r5c5"></div></td>
+		<td><div class="r5c6"></div></td>
+		<td><div class="r5c7"></div></td>
+		<td><div class="r5c8"></div></td>
+		<td><div class="r5c9"></div></td>
+	</tr>
+
+	<tr id="tr-6">
+		<td><div class="r6c0"></div></td>
+		<td><div class="r6c1"></div></td>
+		<td><div class="r6c2"></div></td>
+		<td><div class="r6c3"></div></td>
+		<td><div class="r6c4"></div></td>
+		<td><div class="r6c5"></div></td>
+		<td><div class="r6c6"></div></td>
+		<td><div class="r6c7"></div></td>
+		<td><div class="r6c8"></div></td>
+		<td><div class="r6c9"></div></td>
+	</tr>
+
+	<tr id="tr-7">
+		<td><div class="r7c0"></div></td>
+		<td><div class="r7c1"></div></td>
+		<td><div class="r7c2"></div></td>
+		<td><div class="r7c3"></div></td>
+		<td><div class="r7c4"></div></td>
+		<td><div class="r7c5"></div></td>
+		<td><div class="r7c6"></div></td>
+		<td><div class="r7c7"></div></td>
+		<td><div class="r7c8"></div></td>
+		<td><div class="r7c9"></div></td>
+	</tr>
+
+	<tr id="tr-8">
+		<td><div class="r8c0"></div></td>
+		<td><div class="r8c1"></div></td>
+		<td><div class="r8c2"></div></td>
+		<td><div class="r8c3"></div></td>
+		<td><div class="r8c4"></div></td>
+		<td><div class="r8c5"></div></td>
+		<td><div class="r8c6"></div></td>
+		<td><div class="r8c7"></div></td>
+		<td><div class="r8c8"></div></td>
+		<td><div class="r8c9"></div></td>
+	</tr>
+
+	<tr id="tr-9">
+		<td><div class="r9c0"></div></td>
+		<td><div class="r9c1"></div></td>
+		<td><div class="r9c2"></div></td>
+		<td><div class="r9c3"></div></td>
+		<td><div class="r9c4"></div></td>
+		<td><div class="r9c5"></div></td>
+		<td><div class="r9c6"></div></td>
+		<td><div class="r9c7"></div></td>
+		<td><div class="r9c8"></div></td>
+		<td><div class="r9c9"></div></td>
+	</tr>
+
+</table>
+
+<!-- <div id="c0"></div>
+<div id="c1"></div>
+<div id="c2"></div>
+<div id="c3"></div>
+<div id="c4"></div> -->
+
+<script type="text/javascript">
+
+var cir = ['c0', 'c1', 'c2', 'c3', 'c4']
+// var counter=0;
+
+var addRand = function() 
+{	
+	for (var i = 0; i<3; i++) 
+	{
+		var x = Math.floor(Math.random() * 10);
+		var y = Math.floor(Math.random() * 10);
+		var z = Math.floor(Math.random() * 5);
+		if (!document.getElementsByClassName('r' + [x] + 'c' + [y])[0].hasAttribute('id'))
+		{
+		console.log("ok " + i + "x " + x + "y" + y + "z" + z);
+		document.getElementsByClassName('r' + [x] + 'c' + [y])[0].setAttribute('id', cir[z]);
+		} 	
+		else 
+		{
+			i--;
+			// counter--;
+			// console.log("err " + i);
+		}
+
+		var counter=0;
+		for (var j = 0; j<all.length-1; j++)
+		{
+			if (all[j].getAttribute('id')) counter++;
+		}
+		if (counter==99) 
+		{
+			alert("You Lose");
+			break;
+		}
+		// counter++;
+		// console.log(counter);
+		// if (counter == 99) {
+		// 	i=3;
+		// 	console.log("Your Lose");
+		// }
+	}
+}
+
+var all = document.getElementsByTagName('div');
+console.log(all);
+
+for (var i = 0; i <= all.length-1; i++) 
+	{
+		all[i].setAttribute('onclick', 'myClick(this)');
+	}
+
+var myClick = function(elem) 
+{
+	elem.setAttribute('data-check', 'true');
+	console.log(elem.hasAttribute('data-check'));
+	for (var i = 0; i <= all.length-1; i++) 
+	{
+		for (var j = 0; j <= all.length-1; j++) 
+		{
+			if (all[i].getAttribute('id') == 'null')
+			{
+				all[i].removeAttribute('id');
+			}
+			if (all[j].getAttribute('id') == 'null')
+			{
+				all[j].removeAttribute('id');
+			}
+			if  ((all[i].hasAttribute('data-check')) 
+				&& (all[j].hasAttribute('data-check')) 
+				&& (all[i].hasAttribute('id') != all[j].hasAttribute('id')) 
+					// TRUE   !=  TRUE
+				&& i!=j) 
+			{
+				console.log('succes');
+				all[i].removeAttribute('data-check');
+				all[j].removeAttribute('data-check');
+				tmp = all[i].getAttribute('id');
+				tmp2 = all[j].getAttribute('id');
+				console.log('tmp = ' + tmp + " tmp2 = " + tmp2);
+				all[i].removeAttribute('id');
+				all[j].removeAttribute('id');
+				all[i].setAttribute('id', tmp2);
+				all[j].setAttribute('id', tmp);
+				addPoints();
+				addRand();
+			}
+		}
+	}
+}
+
+var addPoints = function() 
+{
+	for (var i = 0; i <= all.length-1; i++) 
+	{
+		if (i>=0 && i<=5)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{
+				if ((i<5) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<4) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<3) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<2) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}				
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=10 && i<=15)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<15) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<14) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<13) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<12) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=20 && i<=25)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<25) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<24) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<23) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<22) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=30 && i<=35)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{
+				if ((i<35) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<34) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<33) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<32) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=40 && i<=45)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<45) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<44) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<43) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<42) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=50 && i<=55)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<55) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<54) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<53) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<52) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=60 && i<=65)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{
+				if ((i<65) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<64) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<63) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<62) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=70 && i<=75)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{
+				if ((i<75) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<74) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<73) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<72) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=80 && i<=85)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<85) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<84) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<83) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<82) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+		if (i>=90 && i<=95)
+		{
+			if  ((all[i].getAttribute('id') == all[i+1].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+2].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+3].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+4].getAttribute('id')))
+			{	
+				if ((i<95) && ((all[i].getAttribute('id')) == (all[i+5].getAttribute('id'))))
+					{
+						all[i+5].removeAttribute('id');
+					}
+				if ((i<94) && ((all[i].getAttribute('id')) == (all[i+6].getAttribute('id'))))
+					{
+						all[i+6].removeAttribute('id');
+					}
+				if ((i<93) && ((all[i].getAttribute('id')) == (all[i+7].getAttribute('id'))))
+					{
+						all[i+7].removeAttribute('id');
+					}
+				if ((i<92) && ((all[i].getAttribute('id')) == (all[i+8].getAttribute('id'))))
+					{
+						all[i+8].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+1].removeAttribute('id');
+				all[i+2].removeAttribute('id');
+				all[i+3].removeAttribute('id');
+				all[i+4].removeAttribute('id');
+			}
+		}
+	}
+	/// вертикаль 
+	for (var i = 0; i <= all.length-1; i++) 
+	{
+		if ((i%10 == 0) && i>=0 && i<=50)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{	
+				if ((i<50) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<40) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<30) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<20) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 1) && i>=1 && i<=51)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{	
+				if ((i<51) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<41) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<31) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<21) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 2) && i>=2 && i<=52)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<52) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<42) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<32) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<22) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 3) && i>=3 && i<=53)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<53) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<43) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<33) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<23) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 4) && i>=4 && i<=54)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<54) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<44) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<34) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<24) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 5) && i>=5 && i<=55)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<55) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<45) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<35) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<25) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 6) && i>=6 && i<=56)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<56) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<46) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<36) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<26) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 7) && i>=7 && i<=57)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<57) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<47) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<37) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<27) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 8) && i>=8 && i<=58)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<58) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<48) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<38) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<28) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+		if ((i%10 == 9) && i>=9 && i<=59)
+		{
+			if  ((all[i].getAttribute('id') == all[i+10].getAttribute('id')) 
+				&& (all[i].getAttribute('id') == all[i+20].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+30].getAttribute('id'))
+				&& (all[i].getAttribute('id') == all[i+40].getAttribute('id')))
+			{
+				if ((i<59) && ((all[i].getAttribute('id')) == (all[i+50].getAttribute('id'))))
+					{
+						all[i+50].removeAttribute('id');
+					}
+				if ((i<49) && ((all[i].getAttribute('id')) == (all[i+60].getAttribute('id'))))
+					{
+						all[i+60].removeAttribute('id');
+					}
+				if ((i<39) && ((all[i].getAttribute('id')) == (all[i+70].getAttribute('id'))))
+					{
+						all[i+70].removeAttribute('id');
+					}
+				if ((i<29) && ((all[i].getAttribute('id')) == (all[i+80].getAttribute('id'))))
+					{
+						all[i+80].removeAttribute('id');
+					}	
+				all[i].removeAttribute('id');
+				all[i+10].removeAttribute('id');
+				all[i+20].removeAttribute('id');
+				all[i+30].removeAttribute('id');
+				all[i+40].removeAttribute('id');
+			}
+		}
+	}
+	/////конец вертикали
+}
+
+
+</script>
+</body>
+</html>

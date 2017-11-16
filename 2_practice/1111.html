@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <title>clock</title>
+    
+  </head>
+<body>
+
+<!--** .Для заданного времени посчитать угол между стрелками часов
+-->
+
+<script type="text/javascript">
+
+
+// function perfecSum(lengthZ)
+// {
+// 	var result = 0;
+// 	for (var i = 1; i < lengthZ; i++) 
+// 	{
+// 		console.log(i);
+// 		var base = i.toString();
+// 		var str = Math.pow(i, 2).toString();
+// 		var tmp = str.slice(-base.length);
+// 		if (parseInt(i) == parseInt(tmp)) 
+// 		{
+// 			result+=i;
+// 			console.log("mass = " + i + " last " + tmp);
+// 		}
+// 		console.log("result = " + result);
+// 	}
+
+// 	return result;
+// };
+
+function perfecSum(lengthZ)
+{
+	var result = 0;
+	for (var i = 1; i < lengthZ; i++) 
+	{
+		var base = i.toString();
+		var str = Math.pow(i, 2).toString();
+		var tmp = str.slice(-base.length);
+		if (parseInt(i) == parseInt(tmp)) 
+		{
+			result+=i;
+			console.log("mass = " + i + " last " + tmp);
+		}
+		console.log("result = " + result);
+	}
+
+	return result;
+};
+
+console.log(perfecSum(100000));
+
+// function automorphicSum(limit) {
+
+//     var arr = [];
+
+//     for (var i = 1; i < limit; i++) {
+//         var pow = Math.pow(i, 2).toString();
+//         var length = i.toString().length;
+//         var res = pow.slice(-length);
+//         if(res == i) {
+//             arr.push(i);
+//         }
+//     }
+//     return arr.reduce(function(prev, current) {
+//         return prev + current;
+//     });
+
+// }
+
+</script>
+</body>
+</html>
